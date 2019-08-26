@@ -9,7 +9,7 @@
     <div>
       <button
         @click="handleButtonClick"
-        class="time-travel-btn text-grey font-semibold py-3 px-10 rounded text-sm"
+        class="time-travel-btn text-grey font-semibold py-3 px-10 rounded text-sm sm:text-xs"
       >Time travel</button>
     </div>
   </div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="w-1/2 px-6">
+  <div class="lg:w-1/2 px-6">
     <div class="bg-white rounded shadow-md overflow-hidden">
       <div class="font-semibold bg-white p-4 text-gray-800 text-xl">List of actions commited</div>
       <div class="actions-container p-4">

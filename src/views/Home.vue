@@ -1,7 +1,7 @@
 <template>
   <div class="home-component-container relative">
     <SkewedBackground />
-    <div class="container mx-auto relative z-10 p-8 flex">
+    <div class="container mx-auto relative z-10 lg:p-8 lg:flex flex-wrap">
       <PostList />
       <TimeTravel />
     </div>
