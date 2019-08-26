@@ -1,6 +1,6 @@
 <template>
   <div
-    class="skewed-background absolute bg-indigo-600 w-full h-screen shadow-2xl skewed-container"
+    class="skewed-background z-0 absolute bg-indigo-700 w-full h-screen shadow-2xl skewed-container"
   />
 </template>
 
