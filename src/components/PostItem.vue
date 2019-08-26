@@ -3,7 +3,7 @@
   <div
     class="bg-white rounded shadow-md flex flex-row items-center justify-center h-20 px-4 py-4 mb-6"
   >
-    <div class="text-gray-700 flex-grow">{{ title }}</div>
+    <div class="text-gray-700 flex-grow">{{ postTitle }}</div>
     <div
       class="h-full flex flex-col"
       :class=" arrows === 'both' ? 'justify-between' : 'justify-center'"
@@ -39,6 +39,11 @@ export default {
     },
     handleMoveUp() {
       this.$emit('moveUp', this.index);
+    },
+  },
+  computed: {
+    postTitle() {
+      return this.title.charAt(0).toUpperCase() + this.title.slice(1);
     },
   },
 };
