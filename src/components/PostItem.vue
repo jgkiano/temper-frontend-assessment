@@ -1,3 +1,4 @@
+// TODO: find a more effective way of implementing chevron icons
 <template>
   <div
     class="bg-white rounded shadow-md flex flex-row items-center justify-center h-20 px-6 py-4 mb-6"
