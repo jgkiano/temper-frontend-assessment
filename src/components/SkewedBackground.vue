@@ -4,11 +4,23 @@
   />
 </template>
 
+<script>
+const ANIMATION_DURATION = 500;
+export default {
+  mounted() {
+    this.timer = setTimeout(() => {
+      clearTimeout(this.timer);
+      this.$emit('animationEnd');
+    }, ANIMATION_DURATION);
+  },
+};
+</script>
+
 <style scoped>
 .skewed-background {
   transform: skewY(-6deg) translateY(-90vh);
   animation-name: skewedBackgroundAnimation;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   animation-timing-function: ease-in;
   animation-iteration-count: 1;
 }
