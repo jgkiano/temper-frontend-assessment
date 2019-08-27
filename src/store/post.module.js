@@ -1,4 +1,5 @@
 import axios from 'axios';
+import moveArrayItem from '../functions/moveArrayItem';
 
 const MAX_POSTS = 5;
 
@@ -17,6 +18,12 @@ const actions = {
       // TODO: handle errors
       console.error(error);
     }
+  },
+  incrementPostIndexPosition: ({ commit, state: { posts } }, postIndex) => {
+    commit('setPosts', moveArrayItem(posts, postIndex, postIndex + 1));
+  },
+  decrementPostIndexPosition: ({ commit, state: { posts } }, postIndex) => {
+    commit('setPosts', moveArrayItem(posts, postIndex, postIndex - 1));
   },
 };
 
