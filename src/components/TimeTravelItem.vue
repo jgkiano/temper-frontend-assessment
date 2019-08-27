@@ -1,11 +1,11 @@
 <template>
   <div
     class="flex flex-row items-center p-2 items-center justify-center"
-    :class="showBottomBorder ? 'border-b border-gray-300' : ''"
+    :class="hideBottomBorder ? '' : 'border-b border-gray-300'"
   >
     <div
       class="flex-grow text-sm text-gray-700 lg:p-0 p-2"
-    >Moved post {{ postNumber }} from index {{ fromIndex }} to index {{ toIndex }}</div>
+    >Moved post {{ id }} from index {{ from }} to index {{ to }}</div>
     <div>
       <button
         @click="handleButtonClick"
@@ -18,30 +18,26 @@
 <script>
 export default {
   props: {
-    postNumber: {
+    id: {
       type: Number,
       required: true,
     },
-    fromIndex: {
+    from: {
       type: Number,
       required: true,
     },
-    toIndex: {
+    to: {
       type: Number,
       required: true,
     },
-    showBottomBorder: {
+    hideBottomBorder: {
       type: Boolean,
-      default: true,
-    },
-    index: {
-      type: Number,
-      required: true,
+      default: false,
     },
   },
   methods: {
     handleButtonClick() {
-      this.$emit('buttonClicked', this.index);
+      this.$emit('buttonClicked');
     },
   },
 };
