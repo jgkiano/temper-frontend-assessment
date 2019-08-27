@@ -1,0 +1,11 @@
+// post item container
+.post-item-container {
+  min-height: 5rem;
+  height: auto;
+  svg {
+    transition: transform ease-in-out 0.2s;
+  }
+  svg:active {
+    transform: scale(0.5);
+  }
+}

@@ -1,0 +1,14 @@
+// transition animations
+
+.fade-slide-in-enter-active,
+.fade-slide-in-leave-active {
+  transition: all 0.5s;
+}
+.fade-slide-in-enter,
+.fade-leave-to {
+  transform: translateY(100px);
+  opacity: 0;
+}
+.posts-list-transition-move {
+  transition: transform 0.5s;
+}

@@ -37,14 +37,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.fade-slide-in-enter-active,
-.fade-slide-in-leave-active {
-  transition: all 0.5s;
-}
-.fade-slide-in-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  transform: translateY(100px);
-  opacity: 0;
-}
-</style>

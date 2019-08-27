@@ -46,16 +46,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scopped>
-.time-travel-btn {
-  background-color: #25fa8f;
-  transition: background ease-in-out 0.3s;
-  &:hover {
-    background-color: darken(#25fa8f, 10%);
-  }
-  &:focus {
-    outline: 0;
-  }
-}
-</style>
