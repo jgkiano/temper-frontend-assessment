@@ -2,10 +2,10 @@
 .post-item-container {
   min-height: 5rem;
   height: auto;
-  i {
+  svg {
     transition: transform ease-in-out 0.2s;
   }
-  i:active {
+  svg:active {
     transform: scale(0.5);
   }
 }
