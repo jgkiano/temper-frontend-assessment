@@ -1,4 +1,3 @@
-// TODO: find a more effective way of implementing chevron icons
 <template>
   <div
     class="post-item-container bg-white rounded shadow-md flex flex-row justify-center px-4 py-4 mb-6"
