@@ -7,15 +7,18 @@
           class="bg-white rounded border border-gray-300 overflow-hidden shadow-md"
           v-if="history.length"
         >
-          <TimeTravelItem
-            v-for="(action, index) in history"
-            :key="index"
-            :id="action.id"
-            :from="action.from"
-            :to="action.to"
-            :hideBottomBorder="index === (history.length - 1)"
-            @buttonClicked="onButtonClicked(index)"
-          />
+          <transition-group name="time-travel">
+            <TimeTravelItem
+              v-for="(action, index) in history"
+              :key="index"
+              :id="action.id"
+              :from="action.from"
+              :to="action.to"
+              :hideBottomBorder="index === (history.length - 1)"
+              class="time-travel-item"
+              @buttonClicked="timeTravel(index)"
+            />
+          </transition-group>
         </div>
         <div class="bg-white p-4 rounded shadow-md flex items-center text-gray-500" v-else>
           <div>No actions commited yet</div>
@@ -27,7 +30,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState, mapActions } from 'vuex';
 import TimeTravelItem from './TimeTravelItem.vue';
 
 export default {
@@ -36,9 +39,7 @@ export default {
     TimeTravelItem,
   },
   methods: {
-    onButtonClicked(index) {
-      console.log(index);
-    },
+    ...mapActions('post', ['timeTravel']),
   },
   computed: {
     ...mapState('post', ['history']),
