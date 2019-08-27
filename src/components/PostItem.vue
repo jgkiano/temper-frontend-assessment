@@ -5,14 +5,16 @@
   >
     <div class="text-gray-700 flex-grow flex items-center">{{ postTitle }}</div>
     <div class="flex flex-col" :class=" arrows === 'both' ? 'justify-between' : 'justify-center'">
-      <i
-        class="block fas fa-chevron-up text-sm cursor-pointer text-indigo-800 hover:text-indigo-600"
+      <font-awesome-icon
         v-if="arrows !== 'down'"
+        icon="chevron-up"
+        class="block text-sm cursor-pointer text-indigo-800 hover:text-indigo-600"
         @click="handleMoveUp"
       />
-      <i
-        class="block fas fa-chevron-down text-sm cursor-pointer text-indigo-800 hover:text-indigo-600"
+      <font-awesome-icon
         v-if="arrows !== 'up'"
+        icon="chevron-down"
+        class="block text-sm cursor-pointer text-indigo-800 hover:text-indigo-600"
         @click="handleMoveDown"
       />
     </div>
