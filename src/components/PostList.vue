@@ -7,11 +7,10 @@
           <PostItem
             v-for="(post, index) in posts"
             :key="post.id"
-            :index="index"
             :title="post.title"
             :arrows="generateArrow(index)"
-            @moveUp="decrementPostIndexPosition"
-            @moveDown="incrementPostIndexPosition"
+            @moveUp="decrementPostIndexPosition(index)"
+            @moveDown="incrementPostIndexPosition(index)"
           />
         </transition-group>
       </div>
@@ -35,12 +34,6 @@ export default {
   },
   methods: {
     ...mapActions('post', ['incrementPostIndexPosition', 'decrementPostIndexPosition']),
-    onMoveDown(index) {
-      console.log(index);
-    },
-    onMoveUp(index) {
-      console.log(index);
-    },
     generateArrow(index) {
       if (index === 0) return 'down';
       if (index === this.posts.length - 1) return 'up';

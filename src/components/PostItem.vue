@@ -25,7 +25,6 @@
 export default {
   name: 'PostItem',
   props: {
-    index: Number,
     title: String,
     arrows: {
       default: 'both',
@@ -34,10 +33,10 @@ export default {
   },
   methods: {
     handleMoveDown() {
-      this.$emit('moveDown', this.index);
+      this.$emit('moveDown');
     },
     handleMoveUp() {
-      this.$emit('moveUp', this.index);
+      this.$emit('moveUp');
     },
   },
   computed: {
