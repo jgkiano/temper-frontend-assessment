@@ -8,13 +8,13 @@
       <font-awesome-icon
         v-if="arrows !== 'down'"
         icon="chevron-up"
-        class="block text-sm cursor-pointer text-indigo-800 hover:text-indigo-600"
+        class="block cursor-pointer text-indigo-800 hover:text-indigo-600"
         @click="handleMoveUp"
       />
       <font-awesome-icon
         v-if="arrows !== 'up'"
         icon="chevron-down"
-        class="block text-sm cursor-pointer text-indigo-800 hover:text-indigo-600"
+        class="block cursor-pointer text-indigo-800 hover:text-indigo-600"
         @click="handleMoveDown"
       />
     </div>
