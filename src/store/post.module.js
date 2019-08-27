@@ -27,7 +27,10 @@ const actions = {
     const { id } = posts[postIndex];
     commit('setPosts', sortedPosts);
     commit('addHistory', {
-      id, from, to, posts: sortedPosts,
+      id,
+      from,
+      to,
+      posts: sortedPosts,
     });
   },
   decrementPostIndexPosition: ({ commit, state: { posts } }, postIndex) => {
@@ -37,8 +40,15 @@ const actions = {
     const { id } = posts[postIndex];
     commit('setPosts', sortedPosts);
     commit('addHistory', {
-      id, from, to, posts: sortedPosts,
+      id,
+      from,
+      to,
+      posts: sortedPosts,
     });
+  },
+  timeTravel: ({ commit, state: { history } }, historyIndex) => {
+    const { posts } = history[historyIndex];
+    commit('setPosts', posts);
   },
 };
 
