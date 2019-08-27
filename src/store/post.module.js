@@ -7,6 +7,7 @@ const BASE_URL = 'https://jsonplaceholder.typicode.com/posts?_limit=';
 
 const initialState = {
   posts: [],
+  history: [],
 };
 
 const actions = {
@@ -20,16 +21,33 @@ const actions = {
     }
   },
   incrementPostIndexPosition: ({ commit, state: { posts } }, postIndex) => {
-    commit('setPosts', moveArrayItem(posts, postIndex, postIndex + 1));
+    const from = postIndex;
+    const to = postIndex + 1;
+    const sortedPosts = moveArrayItem(posts, from, to);
+    const { id } = posts[postIndex];
+    commit('setPosts', sortedPosts);
+    commit('addHistory', {
+      id, from, to, posts: sortedPosts,
+    });
   },
   decrementPostIndexPosition: ({ commit, state: { posts } }, postIndex) => {
-    commit('setPosts', moveArrayItem(posts, postIndex, postIndex - 1));
+    const from = postIndex;
+    const to = postIndex - 1;
+    const sortedPosts = moveArrayItem(posts, from, to);
+    const { id } = posts[postIndex];
+    commit('setPosts', sortedPosts);
+    commit('addHistory', {
+      id, from, to, posts: sortedPosts,
+    });
   },
 };
 
 const mutations = {
   setPosts: (state, posts) => {
     state.posts = posts;
+  },
+  addHistory: (state, history) => {
+    state.history.push(history);
   },
 };
 
