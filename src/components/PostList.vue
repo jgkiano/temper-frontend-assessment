@@ -9,8 +9,8 @@
             :key="post.id"
             :title="post.title"
             :arrows="generateArrow(index)"
-            @moveUp="decrementPostIndexPosition(index)"
-            @moveDown="incrementPostIndexPosition(index)"
+            @moveUp="movePost({ from: index, to: index - 1 })"
+            @moveDown="movePost({ from: index, to: index + 1 })"
           />
         </transition-group>
       </div>
@@ -33,7 +33,7 @@ export default {
     Spinner,
   },
   methods: {
-    ...mapActions('post', ['incrementPostIndexPosition', 'decrementPostIndexPosition']),
+    ...mapActions('post', ['movePost']),
     generateArrow(index) {
       if (index === 0) return 'down';
       if (index === this.posts.length - 1) return 'up';

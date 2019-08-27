@@ -20,24 +20,9 @@ const actions = {
       console.error(error);
     }
   },
-  incrementPostIndexPosition: ({ commit, state: { posts } }, postIndex) => {
-    const from = postIndex;
-    const to = postIndex + 1;
+  movePost: ({ commit, state: { posts } }, { from, to }) => {
     const sortedPosts = moveArrayItem(posts, from, to);
-    const { id } = posts[postIndex];
-    commit('setPosts', sortedPosts);
-    commit('addHistory', {
-      id,
-      from,
-      to,
-      posts: sortedPosts,
-    });
-  },
-  decrementPostIndexPosition: ({ commit, state: { posts } }, postIndex) => {
-    const from = postIndex;
-    const to = postIndex - 1;
-    const sortedPosts = moveArrayItem(posts, from, to);
-    const { id } = posts[postIndex];
+    const { id } = posts[from];
     commit('setPosts', sortedPosts);
     commit('addHistory', {
       id,
