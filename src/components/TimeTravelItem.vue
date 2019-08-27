@@ -8,7 +8,7 @@
     >Moved post {{ id }} from index {{ from }} to index {{ to }}</div>
     <div>
       <button
-        @click="handleButtonClick"
+        @click="$emit('buttonClicked')"
         class="time-travel-btn text-grey font-semibold lg:py-3 lg:px-10 py-2 px-4 rounded text-sm"
       >Time travel</button>
     </div>
@@ -33,11 +33,6 @@ export default {
     hideBottomBorder: {
       type: Boolean,
       default: false,
-    },
-  },
-  methods: {
-    handleButtonClick() {
-      this.$emit('buttonClicked');
     },
   },
 };
