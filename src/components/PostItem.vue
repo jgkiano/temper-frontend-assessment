@@ -8,13 +8,13 @@
         v-if="arrows !== 'down'"
         icon="chevron-up"
         class="block cursor-pointer text-indigo-800 hover:text-indigo-600"
-        @click="handleMoveUp"
+        @click="$emit('moveUp')"
       />
       <font-awesome-icon
         v-if="arrows !== 'up'"
         icon="chevron-down"
         class="block cursor-pointer text-indigo-800 hover:text-indigo-600"
-        @click="handleMoveDown"
+        @click="$emit('moveDown')"
       />
     </div>
   </div>
@@ -28,14 +28,6 @@ export default {
     arrows: {
       default: 'both',
       type: String,
-    },
-  },
-  methods: {
-    handleMoveDown() {
-      this.$emit('moveDown');
-    },
-    handleMoveUp() {
-      this.$emit('moveUp');
     },
   },
   computed: {
