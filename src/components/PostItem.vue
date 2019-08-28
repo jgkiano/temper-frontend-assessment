@@ -4,18 +4,18 @@
   >
     <div class="text-gray-700 flex-grow flex items-center">{{ postTitle }}</div>
     <div class="flex flex-col" :class=" arrows === 'both' ? 'justify-between' : 'justify-center'">
-      <font-awesome-icon
-        v-if="arrows !== 'down'"
-        icon="chevron-up"
-        class="block cursor-pointer text-indigo-800 hover:text-indigo-600"
-        @click="$emit('moveUp')"
-      />
-      <font-awesome-icon
-        v-if="arrows !== 'up'"
-        icon="chevron-down"
-        class="block cursor-pointer text-indigo-800 hover:text-indigo-600"
-        @click="$emit('moveDown')"
-      />
+      <div class="up-arrow-container" v-if="arrows !== 'down'" @click="$emit('moveUp')">
+        <font-awesome-icon
+          icon="chevron-up"
+          class="block cursor-pointer text-indigo-800 hover:text-indigo-600"
+        />
+      </div>
+      <div class="down-arrow-container" v-if="arrows !== 'up'" @click="$emit('moveDown')">
+        <font-awesome-icon
+          icon="chevron-down"
+          class="block cursor-pointer text-indigo-800 hover:text-indigo-600"
+        />
+      </div>
     </div>
   </div>
 </template>
