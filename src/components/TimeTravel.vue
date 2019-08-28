@@ -10,8 +10,8 @@
           <transition-group name="time-travel">
             <TimeTravelItem
               v-for="(action, index) in history"
-              :key="index"
-              :id="action.id"
+              :key="action.id"
+              :postId="action.postId"
               :from="action.from"
               :to="action.to"
               :hideBottomBorder="index === (history.length - 1)"
