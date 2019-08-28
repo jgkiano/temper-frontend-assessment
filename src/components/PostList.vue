@@ -2,21 +2,17 @@
   <div class="lg:w-1/2 px-6">
     <div class="text-3xl font-semibold text-white lg:pb-4 lg:py-0 py-4">Sortable Post List</div>
     <transition name="fade-slide-in" mode="out-in" key="1">
-      <div v-if="posts.length">
-        <transition-group name="posts-list-transition">
-          <PostItem
-            v-for="(post, index) in posts"
-            :key="post.id"
-            :title="post.title"
-            :arrows="generateArrow(index)"
-            @moveUp="movePost({ from: index, to: index - 1 })"
-            @moveDown="movePost({ from: index, to: index + 1 })"
-          />
-        </transition-group>
-      </div>
-      <div v-else key="2">
-        <Spinner />
-      </div>
+      <transition-group name="posts-list-transition" tag="div" v-if="posts.length">
+        <PostItem
+          v-for="(post, index) in posts"
+          :key="post.id"
+          :title="post.title"
+          :arrows="generateArrow(index)"
+          @moveUp="movePost({ from: index, to: index - 1 })"
+          @moveDown="movePost({ from: index, to: index + 1 })"
+        />
+      </transition-group>
+      <Spinner v-else key="2" />
     </transition>
   </div>
 </template>
