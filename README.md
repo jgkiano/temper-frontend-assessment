@@ -1,29 +1,11 @@
-# temper_frontend_assessment
+# Temper Vue.js coding assessment
 
-## Project setup
-```
-yarn install
-```
+Vue coding assessment assignment for Temper.works 
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
+## Live Demo: https://temperfrontendassessment.jgkiano.now.sh
 
-### Compiles and minifies for production
-```
-yarn run build
-```
+## Running Tests
+`yarn run test:unit`
 
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Deployment
+For deployment I used [Zeit Now](https://zeit.co) via a deploy script, `yarn deploy` in the `package.json` file.
