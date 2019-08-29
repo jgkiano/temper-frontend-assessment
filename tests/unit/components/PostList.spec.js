@@ -2,14 +2,9 @@ import { shallowMount, mount, createLocalVue } from '@vue/test-utils';
 import Vuex from 'vuex';
 import postModule from '@/store/post.module';
 import PostList from '@/components/PostList.vue';
+import posts from '../../test_data/posts';
 
 describe('tests for the PostList component', () => {
-  const posts = [
-    { id: 1, title: 'This is post 1' },
-    { id: 2, title: 'This is post 2' },
-    { id: 3, title: 'This is post 3' },
-  ];
-
   test('it renders a spinner if theres no posts', () => {
     const wrapper = shallowMount(PostList, {
       stubs: {

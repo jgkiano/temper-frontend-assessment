@@ -2,6 +2,7 @@ import Vuex from 'vuex';
 import { mount, createLocalVue } from '@vue/test-utils';
 import Home from '@/views/Home.vue';
 import postModule from '@/store/post.module';
+import posts from '../../test_data/posts';
 
 describe('tests for the Home view component', () => {
   let wrapper;
@@ -9,12 +10,6 @@ describe('tests for the Home view component', () => {
   beforeEach(() => {
     const localVue = createLocalVue();
     localVue.use(Vuex);
-
-    const posts = [
-      { id: 1, title: 'This is post 1' },
-      { id: 2, title: 'This is post 2' },
-      { id: 3, title: 'This is post 3' },
-    ];
 
     const store = new Vuex.Store({
       modules: { post: { ...postModule, state: { posts, history: [] } } },
