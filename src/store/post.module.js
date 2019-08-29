@@ -1,4 +1,5 @@
 import axios from 'axios';
+import uuid from 'uuid/v4';
 import moveArrayItem from '../functions/moveArrayItem';
 
 const MAX_POSTS = 5;
@@ -25,7 +26,7 @@ const actions = {
     const { id } = posts[from];
     commit('setPosts', sortedPosts);
     commit('addHistory', {
-      id,
+      postId: id,
       from,
       to,
       posts: sortedPosts,
@@ -42,7 +43,7 @@ const mutations = {
     state.posts = posts;
   },
   addHistory: (state, history) => {
-    state.history.push(history);
+    state.history.push({ ...history, id: uuid() });
   },
 };
 

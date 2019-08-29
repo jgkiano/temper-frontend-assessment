@@ -2,20 +2,28 @@
   <div
     class="post-item-container bg-white rounded shadow-md flex flex-row justify-center px-4 py-4 mb-6"
   >
-    <div class="text-gray-700 flex-grow flex items-center">{{ postTitle }}</div>
+    <div class="post-item-title text-gray-700 flex-grow flex items-center">{{ postTitle }}</div>
     <div class="flex flex-col" :class=" arrows === 'both' ? 'justify-between' : 'justify-center'">
-      <font-awesome-icon
+      <div
+        class="arrow-container up-arrow-container"
         v-if="arrows !== 'down'"
-        icon="chevron-up"
-        class="block cursor-pointer text-indigo-800 hover:text-indigo-600"
         @click="$emit('moveUp')"
-      />
-      <font-awesome-icon
+      >
+        <font-awesome-icon
+          icon="chevron-up"
+          class="block cursor-pointer text-indigo-800 hover:text-indigo-600"
+        />
+      </div>
+      <div
+        class="arrow-container down-arrow-container"
         v-if="arrows !== 'up'"
-        icon="chevron-down"
-        class="block cursor-pointer text-indigo-800 hover:text-indigo-600"
         @click="$emit('moveDown')"
-      />
+      >
+        <font-awesome-icon
+          icon="chevron-down"
+          class="block cursor-pointer text-indigo-800 hover:text-indigo-600"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -24,7 +32,10 @@
 export default {
   name: 'PostItem',
   props: {
-    title: String,
+    title: {
+      type: String,
+      default: '',
+    },
     arrows: {
       default: 'both',
       type: String,

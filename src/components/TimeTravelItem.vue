@@ -4,8 +4,8 @@
     :class="hideBottomBorder ? '' : 'border-b border-gray-300'"
   >
     <div
-      class="flex-grow text-sm text-gray-700 lg:p-0 p-2"
-    >Moved post {{ id }} from index {{ from }} to index {{ to }}</div>
+      class="time-travel-text flex-grow text-sm text-gray-700 lg:p-0 p-2"
+    >Moved post {{ postId }} from index {{ from }} to index {{ to }}</div>
     <div>
       <button
         @click="$emit('buttonClicked')"
@@ -18,7 +18,7 @@
 <script>
 export default {
   props: {
-    id: {
+    postId: {
       type: Number,
       required: true,
     },
