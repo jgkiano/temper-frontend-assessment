@@ -26,7 +26,6 @@ const actions = {
     const { id } = posts[from];
     commit('setPosts', sortedPosts);
     commit('addHistory', {
-      id: uuid(),
       postId: id,
       from,
       to,
@@ -44,7 +43,7 @@ const mutations = {
     state.posts = posts;
   },
   addHistory: (state, history) => {
-    state.history.push(history);
+    state.history.push({ ...history, id: uuid() });
   },
 };
 
