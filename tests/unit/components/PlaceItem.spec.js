@@ -12,6 +12,7 @@ describe('tests for the PostItem component', () => {
       },
     });
     expect(wrapper.find('.post-item-title').text()).toBe('Hello world');
+    wrapper.destroy();
   });
 
   test('it renders both arrows by default', () => {
@@ -19,6 +20,7 @@ describe('tests for the PostItem component', () => {
       stubs,
     });
     expect(wrapper.findAll('.arrow-container').length).toBe(2);
+    wrapper.destroy();
   });
 
   test('it renders up arrow', () => {
@@ -30,6 +32,7 @@ describe('tests for the PostItem component', () => {
     });
     expect(wrapper.find('.up-arrow-container').exists()).toBe(true);
     expect(wrapper.find('.down-arrow-container').exists()).toBe(false);
+    wrapper.destroy();
   });
 
   test('it renders down arrow', () => {
@@ -41,6 +44,7 @@ describe('tests for the PostItem component', () => {
     });
     expect(wrapper.find('.up-arrow-container').exists()).toBe(false);
     expect(wrapper.find('.down-arrow-container').exists()).toBe(true);
+    wrapper.destroy();
   });
 
   test('it emits an event when arrows are clicked', () => {
@@ -51,5 +55,6 @@ describe('tests for the PostItem component', () => {
     expect(wrapper.emitted().moveUp).toBeTruthy();
     wrapper.find('.down-arrow-container').trigger('click');
     expect(wrapper.emitted().moveDown).toBeTruthy();
+    wrapper.destroy();
   });
 });
