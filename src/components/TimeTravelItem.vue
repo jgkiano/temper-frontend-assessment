@@ -4,7 +4,7 @@
     :class="hideBottomBorder ? '' : 'border-b border-gray-300'"
   >
     <div
-      class="flex-grow text-sm text-gray-700 lg:p-0 p-2"
+      class="time-travel-text flex-grow text-sm text-gray-700 lg:p-0 p-2"
     >Moved post {{ postId }} from index {{ from }} to index {{ to }}</div>
     <div>
       <button
