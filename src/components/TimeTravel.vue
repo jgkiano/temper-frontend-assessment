@@ -4,10 +4,10 @@
       <div class="font-semibold bg-white p-4 text-gray-800 text-xl">List of actions commited</div>
       <div class="actions-container p-4">
         <div
-          class="bg-white rounded border border-gray-300 overflow-hidden shadow-md"
+          class="time-travel-items-container bg-white rounded border border-gray-300 overflow-hidden shadow-md"
           v-if="history.length"
         >
-          <transition-group name="time-travel">
+          <transition-group name="time-travel" tag="div">
             <TimeTravelItem
               v-for="(action, index) in history"
               :key="action.id"
@@ -20,7 +20,10 @@
             />
           </transition-group>
         </div>
-        <div class="bg-white p-4 rounded shadow-md flex items-center text-gray-500" v-else>
+        <div
+          class="default-timetravel-message bg-white p-4 rounded shadow-md flex items-center text-gray-500"
+          v-else
+        >
           <div>No actions commited yet</div>
           <font-awesome-icon icon="sad-cry" class="ml-2 text-4xl" />
         </div>
